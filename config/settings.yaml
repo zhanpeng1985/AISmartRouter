@@ -1,0 +1,16 @@
+server:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+
+database:
+  path: "data/call_logs.db"
+
+analyzer:
+  schedule: "daily"  # daily / hourly / manual
+  min_call_count: 20
+  min_consistency: 0.85
+
+solidification:
+  auto_deploy_threshold: 0.98
+  manual_review_threshold: 0.95

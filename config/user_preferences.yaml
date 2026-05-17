@@ -1,0 +1,17 @@
+user_preferences:
+  provider_priority:
+    - alibaba
+    - deepseek
+    - baidu
+    - openai
+    - anthropic
+  blocked_providers: []
+  region: prefer_cn
+  budget:
+    max_per_call: 0.5
+    monthly_limit: 500
+  quality:
+    default_tier: balanced
+    overrides:
+      complex_analysis: quality_first
+      text_classification: cost_first

@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "smart-router"
+version = "0.1.0"
+description = "SmartRouter — 智能AI调用路由器，基于渐进式固化策略实现零成本规则匹配与AI动态路由的混合决策"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "SmartRouter Team" },
+]
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn[standard]",
+    "litellm>=1.0.0",
+    "apscheduler>=3.10.0",
+    "pyyaml>=6.0",
+    "aiosqlite>=0.19.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "httpx>=0.24.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+smart-router = "smart_router.main:main"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

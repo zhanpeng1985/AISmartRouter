@@ -1,0 +1,114 @@
+models:
+  deepseek-chat:
+    provider: deepseek
+    litellm_model: deepseek/deepseek-chat
+    region: cn
+    context_window: 65536
+    pricing:
+      input_per_million: 1.0
+      output_per_million: 2.0
+    capabilities:
+      chinese_understanding: 4.5
+      instruction_following: 4.0
+      logical_reasoning: 4.5
+      information_extraction: 4.0
+      code_generation: 4.5
+      creative_writing: 3.5
+      long_context: 4.0
+      structured_output: 4.0
+      multimodal: 1.0
+
+  qwen-plus:
+    provider: alibaba
+    litellm_model: qwen/qwen-plus
+    region: cn
+    context_window: 131072
+    pricing:
+      input_per_million: 0.8
+      output_per_million: 2.0
+    capabilities:
+      chinese_understanding: 4.5
+      instruction_following: 4.5
+      logical_reasoning: 4.0
+      information_extraction: 4.5
+      code_generation: 3.5
+      creative_writing: 4.0
+      long_context: 4.5
+      structured_output: 4.5
+      multimodal: 4.0
+
+  qwen-turbo:
+    provider: alibaba
+    litellm_model: qwen/qwen-turbo
+    region: cn
+    context_window: 131072
+    pricing:
+      input_per_million: 0.3
+      output_per_million: 0.6
+    capabilities:
+      chinese_understanding: 4.0
+      instruction_following: 4.0
+      logical_reasoning: 3.5
+      information_extraction: 4.0
+      code_generation: 3.0
+      creative_writing: 3.5
+      long_context: 4.0
+      structured_output: 4.0
+      multimodal: 3.5
+
+  glm-4-flash:
+    provider: zhipu
+    litellm_model: zhipuai/glm-4-flash
+    region: cn
+    context_window: 128000
+    pricing:
+      input_per_million: 0.1
+      output_per_million: 0.1
+    capabilities:
+      chinese_understanding: 4.0
+      instruction_following: 3.5
+      logical_reasoning: 3.5
+      information_extraction: 3.5
+      code_generation: 3.5
+      creative_writing: 3.0
+      long_context: 3.5
+      structured_output: 3.5
+      multimodal: 3.0
+
+  gpt-4o-mini:
+    provider: openai
+    litellm_model: gpt-4o-mini
+    region: us
+    context_window: 128000
+    pricing:
+      input_per_million: 0.15
+      output_per_million: 0.6
+    capabilities:
+      chinese_understanding: 3.5
+      instruction_following: 4.5
+      logical_reasoning: 4.0
+      information_extraction: 3.5
+      code_generation: 4.5
+      creative_writing: 4.0
+      long_context: 4.0
+      structured_output: 4.0
+      multimodal: 4.0
+
+  claude-3-haiku:
+    provider: anthropic
+    litellm_model: claude-3-haiku-20240307
+    region: us
+    context_window: 200000
+    pricing:
+      input_per_million: 0.25
+      output_per_million: 1.25
+    capabilities:
+      chinese_understanding: 3.0
+      instruction_following: 4.5
+      logical_reasoning: 4.0
+      information_extraction: 3.5
+      code_generation: 4.0
+      creative_writing: 4.0
+      long_context: 4.5
+      structured_output: 4.5
+      multimodal: 3.5
