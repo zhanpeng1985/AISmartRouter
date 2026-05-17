@@ -1,3 +1,5 @@
+[English](./README_en.md) | 中文
+
 # AISmartRouter
 
 面向个人用户的开源AI智能路由器。核心理念：**能用规则实现的就不用AI**，通过渐进式固化引擎，持续降低AI使用成本。
@@ -258,6 +260,25 @@ curl -X POST http://localhost:8000/admin/analyze/deploy/{rule_id}
 |------|------|------|
 | `/health` | GET | 健康检查 |
 | `/docs` | GET | 自动生成的Swagger API文档 |
+
+---
+
+## 与 LiteLLM 的关系
+
+AISmartRouter **不是** LiteLLM 的替代品，而是在其之上的**决策层**。
+
+| 层面 | AISmartRouter | LiteLLM |
+|------|--------------|---------|
+| 职责 | 决策：该不该调AI？调哪个模型？能否用规则替代？ | 执行：统一接口调用100+模型，负载均衡，故障转移 |
+| 核心价值 | 成本优化 + 渐进式固化 | 供应商统一 + 可靠性保障 |
+| 类比 | 大脑（判断） | 手脚（执行） |
+
+**设计理念**：
+- LiteLLM 解决的是"如何调用AI模型"的问题（统一接口、负载均衡、故障转移）
+- AISmartRouter 解决的是"是否需要调用AI"和"调用哪个模型最划算"的问题
+- 两者结合 = 既保证调用的可靠性，又持续降低调用的必要性
+
+**使用方式**：AISmartRouter 作为 pip 依赖引入 LiteLLM（`import litellm`），不修改 LiteLLM 源码，通过标准 API 调用。LiteLLM 是 MIT 协议，完全合规。
 
 ---
 
